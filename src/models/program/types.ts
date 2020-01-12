@@ -4,7 +4,7 @@ import { Ministry } from "../ministry/types";
 import { PublicService } from "../public-service/types";
 
 export interface Program {
-    code?: number;
+    code: number;
     year: number;
     name: string;
     evaluation: Evaluation;
