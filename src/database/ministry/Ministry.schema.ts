@@ -2,7 +2,7 @@
 import mongoose, { Schema } from 'mongoose';
 import { MinistryDocument } from './types';
 
-export const MinistrySchema = new Schema({
+const MinistrySchema = new Schema({
     name: {
         type: String,
         required: true
