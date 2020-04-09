@@ -11,6 +11,17 @@ export const MinistrySchema = new Schema({
         type: Number,
         required: true
     },
+    programs: {
+        type: String
+    },
+    evaluation: {
+        value: {
+            type: Number
+        },
+        description: {
+            type: String
+        }
+    },
     creationDate: {
         type: Date,
         default: Date.now()

@@ -3,6 +3,7 @@ import { nestedArrayToObject } from "../helpers/parser/nested-array-to-object/ne
 import { OptionsRoutesParams } from "../controller/types";
 import { getAllKeys } from "../controller/program/Program.validation";
 import { pickAtributes } from "../helpers/filter/object-atributes/objectAtributes.filter";
+import { MongoQueryOptions } from "./types";
 
 export const createQuery = <T extends IndexSignature<any>>(payload: T, acceptedParams: Map<string, string>) => {
     const clearPayload = pickAtributes(payload, getAllKeys);
@@ -12,11 +13,11 @@ export const createQuery = <T extends IndexSignature<any>>(payload: T, acceptedP
     return nestedArrayToObject(arrayQuery);
 }
 
-export const createOptions = (payload: OptionsRoutesParams) => {
-    const { page = '0', limit = '100' } = payload;
+export const createOptions = (payload: OptionsRoutesParams): MongoQueryOptions => {
+    const { page: skip = 0, limit = 100 } = payload;
 
     return {
-        skip: parseInt(page),
-        limit: parseInt(limit)
+        skip,
+        limit
     }
 }

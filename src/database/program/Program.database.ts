@@ -1,9 +1,9 @@
 
 import ProgramSchema from "./Program.schema";
-import { mongoOptions } from "../types";
+import { createOptions } from "../../services/services.helper";
 
 export class ProgramDatabase {
-    static async Get(query: Object, options: mongoOptions) {
+    static async Get(query?: Object, options = createOptions({})) {
 
         return await ProgramSchema
             .find(query)
