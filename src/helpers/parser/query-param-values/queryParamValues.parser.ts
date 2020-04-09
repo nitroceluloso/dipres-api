@@ -7,7 +7,7 @@ export const parseValuesFromObject = (obj: IndexSignature<string>) => {
     return keys.reduce((prev, current) => {
         return {
             ...prev,
-            current: parseIfNumber(obj[current])
+            [current]: parseIfNumber(obj[current])
         }
     }, {});
 }

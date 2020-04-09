@@ -8,7 +8,7 @@ export const createQuery = <T extends IndexSignature<any>>(payload: T, acceptedP
     const clearPayload = pickAtributes(payload, getAllKeys);
     const payloadKeys = Object.keys(clearPayload);
 
-    const arrayQuery = payloadKeys.map((el) => [ payload[el], acceptedParams.get(el) ]);
+    const arrayQuery = payloadKeys.map((el) => [ acceptedParams.get(el), payload[el] ]);
     return nestedArrayToObject(arrayQuery);
 }
 

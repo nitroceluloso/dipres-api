@@ -1,13 +1,11 @@
 
 import { Request, Response, NextFunction } from 'express';
 import { ProgramService } from "../../services/program/Program.service";
-import { getAllKeys } from "./Program.validation";
-import { clearRequest } from "../controller.helper";
 
 export class ProgramController {
 
     static async Get(req: Request, res: Response, next: NextFunction) {
-        const query = clearRequest(req.query, getAllKeys);
+        const { query } = req;
 
         try {
             const programs = await ProgramService.Get(query as any);
