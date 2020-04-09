@@ -1,8 +1,9 @@
 
-export interface ProgramQuery extends IndexSignature<string | undefined> {
-    evaluation?: string;
-    ministry?: string;
-    publicService?: string;
-    year?: string;
-    page?: string;
+import { OptionsRoutesParams } from "../types";
+
+export interface ProgramQuery extends IndexSignature<string | number | undefined>, OptionsRoutesParams {
+    evaluation: string;
+    ministry: string;
+    publicService: string;
+    year: string;
 }

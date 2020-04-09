@@ -1,11 +1,12 @@
 
 import ProgramSchema from "./Program.schema";
+import { mongoOptions } from "../types";
 
 export class ProgramDatabase {
-    static async Get(query: any, options: any) {
+    static async Get(query: Object, options: mongoOptions) {
+
         return await ProgramSchema
             .find(query)
-            .skip(0)
-            .limit(100);
+            .setOptions(options);
     }
 }
