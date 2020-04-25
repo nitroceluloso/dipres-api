@@ -5,5 +5,3 @@ export const getAll = {
     publicService: 'string?',
     year: 'number?',
 }
-
-export const getAllKeys = Object.keys(getAll)

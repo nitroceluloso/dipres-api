@@ -1,7 +1,7 @@
 
 
-import { NextFunction, Response, Request } from "express";
+import { Response, Request } from "express";
 
-export const notFoundMiddleware = (req: Request, res: Response, next: NextFunction) => {
+export const notFoundMiddleware = (req: Request, res: Response) => {
     res.status(404).send();
 }

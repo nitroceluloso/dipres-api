@@ -1,5 +1,6 @@
 module.exports = {
     "verbose": true,
+    "testEnvironment": "node",
     "collectCoverage": true,
     "roots": [
         "<rootDir>/src"
@@ -16,6 +17,10 @@ module.exports = {
         "App.ts",
         "Server.ts",
         "index.ts",
-        ".schema.ts"
+        ".schema.ts",
+        ".database.ts",
+        ".mock.ts",
+        ".routes.ts",
+        ".validation.ts"
     ]
 }
