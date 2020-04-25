@@ -1,5 +1,5 @@
 
-import { parseIfNumber } from "../parse-if-number/parseIfNumber";
+import { parseIfNumber } from "../parse-if-number/parseIfNumber.parser";
 
 export const parseValuesFromObject = (obj: IndexSignature<string>) => {
     const keys = Object.keys(obj);
