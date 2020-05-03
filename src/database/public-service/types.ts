@@ -1,5 +1,10 @@
 
 import { Document } from "mongoose";
-import { PublicService } from "../../models/public-service/types";
+
+interface PublicService {
+    name: string;
+    code: number;
+    creationDate: Date;
+}
 
 export interface PublicServiceDocument extends PublicService, Document {}

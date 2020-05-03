@@ -1,5 +1,12 @@
 
 import { Document } from "mongoose";
-import { Ministry } from "../../models/ministry/types";
+
+interface Ministry {
+    name: string;
+    code: number;
+    programs: string;
+    evaluation: object;
+    creationDate: Date
+}
 
 export interface MinistryDocument extends Ministry, Document {}

@@ -1,13 +1,17 @@
 
 import { parseIfNumber } from "../parse-if-number/parseIfNumber.parser";
 
-export const parseValuesFromObject = (obj: IndexSignature<string>) => {
-    const keys = Object.keys(obj);
+/**
+ * Returns an object with the posible numbers parsed.
+ * @param obj Plain object.
+ */
+export const parseValuesFromObject = (obj: IndexSignature<string>) => Object.entries(obj).reduce(arrayToObjectParser, {});
 
-    return keys.reduce((prev, current) => {
-        return {
-            ...prev,
-            [current]: parseIfNumber(obj[current])
-        }
-    }, {});
+const arrayToObjectParser = (prev: object, act: Array<any>) => {
+    const [ key, value ] = act;
+
+    return {
+        ...prev,
+        [key]: parseIfNumber(value)
+    }
 }
