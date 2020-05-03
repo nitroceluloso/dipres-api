@@ -10,7 +10,7 @@ jest.mock('../../database/program/Program.database', () => {
 })
 
 describe('Program [service]', () => {
-    
+
     test('get', () => {
         ProgramService.Get({} as any);
     });
